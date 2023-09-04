@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //console.log(allMusicCDs);
   };
 
+  // delete music CD by id
   function deleteMusicCD(deletedId) {
     //console.log(id)
     allMusicCDs = allMusicCDs.filter((cd) => cd.id !== deletedId);
