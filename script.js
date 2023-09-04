@@ -37,14 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function getFormData() {
     const musicCD = Object.create(MusicCD);
 
-    const MusicCDAuthorValue = musicCDAuthor.value.trim();
-    musicCD.author = MusicCDAuthorValue;
+    const musicCDAuthorValue = musicCDAuthor.value.trim();
+    musicCD.author = musicCDAuthorValue;
 
-    const MusicCDTitleValue = musicCDTitle.value.trim();
-    musicCD.title = MusicCDTitleValue;
+    const musicCDTitleValue = musicCDTitle.value.trim();
+    musicCD.title = musicCDTitleValue;
 
-    const MusicCDYearValue = Number(musicCDYear.value.trim());
-    musicCD.year = MusicCDYearValue;
+    const musicCDYearValue = Number(musicCDYear.value.trim());
+    musicCD.year = musicCDYearValue;
 
     musicCD.id = counter;
     counter++; 
