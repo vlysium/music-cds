@@ -20,15 +20,15 @@
           <div class="fields-wrapper">
             <div>
               <label for="form-author">Author</label>
-              <input type="text" name="author" id="form-author">
+              <input type="text" name="author" id="form-author" required>
             </div>
             <div>
               <label for="form-title">Title</label>
-              <input type="text" name="title" id="form-title">
+              <input type="text" name="title" id="form-title" required>
             </div>
             <div>
               <label for="form-year">Year</label>
-              <input type="text" name="year" id="form-year" inputmode="numeric" pattern="\d*">
+              <input type="text" name="year" id="form-year" inputmode="numeric" pattern="\d{4}" required>
             </div>
             <input type="submit" value="Add">
           </div>
