@@ -4,52 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music CDs</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   </body>
 
-    <form id="cd-form">
-      <fieldset>
-        <legend>Music CDs</legend>
-        <div>
-          <label for="form-author">Author</label>
-          <input type="text" name="author" id="form-author">
-        </div>
-        <div>
-          <label for="form-title">Title</label>
-          <input type="text" name="title" id="form-title">
-        </div>
-        <div>
-          <label for="form-year">Year</label>
-          <input type="text" name="year" id="form-year">
-        </div>
-        <input type="submit" value="Add">
-      </fieldset>
-    </form>
+    <main id="app">
 
-    <table>
-      <thead>
+      <form id="cd-form">
+        <fieldset>
+          <legend>Music CDs</legend>
+          <div class="fields-wrapper">
+            <div>
+              <label for="form-author">Author</label>
+              <input type="text" name="author" id="form-author">
+            </div>
+            <div>
+              <label for="form-title">Title</label>
+              <input type="text" name="title" id="form-title">
+            </div>
+            <div>
+              <label for="form-year">Year</label>
+              <input type="text" name="year" id="form-year">
+            </div>
+            <input type="submit" value="Add">
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th data-cd-author="header">Author</th>
+              <th data-cd-title="header">Title</th>
+              <th data-cd-year="header">Year</th>
+              <th data-cd-delete="header"></th>
+            </tr>
+          </thead>
+          <tbody id="cd-list">
+            <!-- template -->
+          </tbody>
+        </table>
+      </div>
+      
+      <template id="cd-template">
         <tr>
-          <th>Author</th>
-          <th>Title</th>
-          <th>Year</th>
-          <th></th>
+          <td data-cd-author="body"></td>
+          <td data-cd-title="body"></td>
+          <td data-cd-year="body"></td>
+          <td data-cd-delete="body">Delete</td>
         </tr>
-      </thead>
-      <tbody id="cd-list">
-        <!-- template -->
-      </tbody>
-    </table>
-    
-    <template id="cd-template">
-      <tr>
-        <td data-cd-author></td>
-        <td data-cd-title></td>
-        <td data-cd-year></td>
-        <td data-cd-delete></td>
-      </tr>
-    </template>
+      </template>
+
+    </main>
 
   </body>
 </html>
