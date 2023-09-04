@@ -3,9 +3,11 @@
 // initiate function on window load
 document.addEventListener("DOMContentLoaded", () => {
 
-  const allMusicCDs = []; // list of all music CDs to be displayed
+  let allMusicCDs = []; // list of all music CDs to be displayed
 
-  const MusicCD = { author: null, title: null, year: null, }; // music CD object prototype
+  const MusicCD = { id: null, author: null, title: null, year: null, }; // music CD object prototype
+
+  let counter = 0; // counter for setting music CD id
 
   const musicCDList = document.querySelector("#cd-list"); // parent element for the music CDs
 
@@ -44,7 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const MusicCDYearValue = Number(musicCDYear.value.trim());
     musicCD.year = MusicCDYearValue;
 
-    console.log(musicCD);
+    musicCD.id = counter;
+    counter++; 
+
+    //console.log(musicCD);
     return musicCD;
   }
 
@@ -73,8 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const musicCDCloneYear = musicCDClone.querySelector("[data-cd-year]");
       musicCDCloneYear.textContent = musicCD.year;
 
+      const musicCDCloneDelete = musicCDClone.querySelector("[data-cd-delete]");
+      musicCDCloneDelete.addEventListener("click", () => deleteMusicCD(musicCD.id))
+
       musicCDList.appendChild(musicCDClone);
     })
+
+    //console.log(allMusicCDs);
   };
+
+  function deleteMusicCD(deletedId) {
+    //console.log(id)
+    allMusicCDs = allMusicCDs.filter((cd) => cd.id !== deletedId);
+
+    displayData(allMusicCDs);
+  }
 
 });

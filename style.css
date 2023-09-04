@@ -90,6 +90,19 @@ tr > [data-cd-year] {
   text-align: right;
 }
 
+[data-cd-delete="body"] {
+  cursor: pointer;
+  color: #dc2626;
+  font-weight: 500;
+  transition-property: color, background-color;
+  transition-duration: 0.1s;
+}
+
+[data-cd-delete="body"]:hover {
+  color: #fef2f2;
+  background-color: #dc2626;
+}
+
 thead {
   text-align: left;
   background-color: #f4f4f5;
