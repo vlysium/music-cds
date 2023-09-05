@@ -15,49 +15,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const musicCDForm = document.querySelector("#cd-form");
   musicCDForm.addEventListener("submit", submitForm);
-
-  const musicCDAuthor = musicCDForm.querySelector("#form-author");
-  const musicCDTitle = musicCDForm.querySelector("#form-title");
-  const musicCDYear = musicCDForm.querySelector("#form-year");
   
   // on form submit
-  function submitForm(e) {
-    e.preventDefault();
+  function submitForm(event) {
+    event.preventDefault();
     
-    const formData = getFormData();
+    const formData = getFormData(event);
 
     allMusicCDs.push(formData);
 
-    resetForm();
+    this.reset();
 
     displayData(allMusicCDs);
   }
 
   // retrieve data from the form
-  function getFormData() {
+  function getFormData(event) {
     const musicCD = Object.create(MusicCD);
 
-    const musicCDAuthorValue = musicCDAuthor.value.trim();
-    musicCD.author = musicCDAuthorValue;
+    const musicCDAuthor = event.target.elements.author.value.trim();
+    musicCD.author = musicCDAuthor;
 
-    const musicCDTitleValue = musicCDTitle.value.trim();
-    musicCD.title = musicCDTitleValue;
+    const musicCDTitle = event.target.elements.title.value.trim();
+    musicCD.title = musicCDTitle;
 
-    const musicCDYearValue = Number(musicCDYear.value.trim());
-    musicCD.year = musicCDYearValue;
+    const musicCDYear = Number(event.target.elements.year.value.trim());
+    musicCD.year = musicCDYear;
 
     musicCD.id = counter;
     counter++; 
 
     //console.log(musicCD);
     return musicCD;
-  }
-
-  // reset all input values in the form for the user
-  function resetForm() {
-    musicCDAuthor.value = "";
-    musicCDTitle.value = "";
-    musicCDYear.value = "";
   }
 
   // display the music CD list
