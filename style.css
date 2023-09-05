@@ -1,3 +1,14 @@
+:root {
+  --zinc-50: #fef2f2;
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-800: #27272a;
+  --zinc-950: #09090b;
+
+  --red-600: #dc2626;
+}
+
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -27,9 +38,9 @@ legend {
   padding: 0.75rem;
   font-size: 1.25rem;
   font-weight: 500;
-  background-color: #f4f4f5;
-  border-bottom: 1px solid #d4d4d8;
-  color: #09090b;
+  background-color: var(--zinc-100);
+  border-bottom: 1px solid var(--zinc-300);
+  color: var(--zinc-950);
 }
 
 .fields-wrapper {
@@ -43,22 +54,24 @@ legend {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 4rem;
+  gap: 1rem;
 }
 
 label {
-  color: #09090b;
+  display: inline-block;
+  width: 4rem;
+  color: var(--zinc-950);
 }
 
 input:not([type="submit"]) {
-  color: #09090b;
+  color: var(--zinc-950);
   width: 100%;
   margin-left: auto;
   padding: 0.5rem;
 }
 
 input[type="submit"] {
-  color: #09090b;
+  color: var(--zinc-950);
   padding: 0.5rem 2rem;
   font-size: 1rem;
   width: max-content;
@@ -68,7 +81,7 @@ form, .table-wrapper {
   margin-top: 4rem;
   overflow: hidden;
   border-radius: 0.5rem;
-  border: 1px solid #e4e4e7;
+  border: 1px solid var(--zinc-200);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
@@ -77,13 +90,15 @@ table {
   border-collapse: collapse;
 }
 
+
+
 tr {
   display: grid;
   grid-template-columns: 5fr 5fr 2fr 2fr;
 }
 
 tr + tr {
-  border-top: 1px solid #e4e4e7;
+  border-top: 1px solid var(--zinc-200);
 }
 
 tr > [data-cd-year] {
@@ -92,31 +107,31 @@ tr > [data-cd-year] {
 
 [data-cd-delete="body"] {
   cursor: pointer;
-  color: #dc2626;
+  color: var(--red-600);
   font-weight: 500;
   transition-property: color, background-color;
   transition-duration: 0.1s;
 }
 
 [data-cd-delete="body"]:hover {
-  color: #fef2f2;
-  background-color: #dc2626;
+  color: var(--zinc-50);
+  background-color: var(--red-600);
 }
 
 thead {
   text-align: left;
-  background-color: #f4f4f5;
-  border-bottom: 1px solid #d4d4d8;
+  background-color: var(--zinc-100);
+  border-bottom: 1px solid var(--zinc-300);
 }
 
 th {
   padding: 0.75rem 0.875rem;
   font-weight: 500;
-  color: #09090b;
+  color: var(--zinc-950);
 }
 
 td {
   padding: 0.75rem 1rem;
   font-weight: 400;
-  color: #27272a;
+  color: var(--zinc-800);
 }
